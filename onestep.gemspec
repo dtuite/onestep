@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Onestep::VERSION
   gem.authors       = ["David Tuite"]
   gem.email         = ["dtuite@gmail.com"]
-  gem.description   = %q{Prevent users sending multiple requests when clicking buttons and forms.}
+  gem.description   = %q{Prevent users sending duplicate requests by rapidly clicking links and buttons.}
   gem.summary       = %q{Onestep is a drop in JS modification which prevents users from submitting forms with idential information multiple times. Onestep disables the submission button until the first request has returned before re-enabling the submit button. THe same behavior is also applied to remote buttons and links.}
   gem.homepage      = ""
 

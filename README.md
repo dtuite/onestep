@@ -1,6 +1,6 @@
 # Onestep
 
-Onestep is a Rails gem which improves the user experience by temporarily disabling buttons and forms which have active requests in process.
+Prevent users sending duplicate requests by rapidly clicking links and buttons.
 
 ## Installation
 
