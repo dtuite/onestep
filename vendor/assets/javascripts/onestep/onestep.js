@@ -1,5 +1,7 @@
 (function(exports) {
-  var disabler = {
+  exports.Onestep = {};
+
+  Onestep.disabler = {
     // Disable an <a/> tag.
     disableLink: function(e) {
       return this.each(function() {
@@ -28,26 +30,28 @@
 
   jQuery.fn.onestep = function() {
     return this.each(function() {
-      var $this,
-        _this = this;
-      $this = $(this);
+      var $this = $(this),
+          _this = this;
+
       if ($this.is('a')) {
         $this.on('ajax:complete', function() {
-          return disabler.enableLink.apply($this);
+          return Onestep.disabler.enableLink.apply($this);
         });
+
         if ($this.hasClass('disabled')) {
-          return disabler.disableLink.apply($this);
+          return Onestep.disabler.disableLink.apply($this);
         } else {
           return $this.on('ajax:beforeSend', function() {
-            return disabler.disableLink.apply($this);
+            return Onestep.disabler.disableLink.apply($this);
           });
         }
+
       } else if ($this.is('form')) {
         $this.on('ajax:complete', function() {
-          return disabler.enableForm.apply($this);
+          return Onestep.disabler.enableForm.apply($this);
         });
         return $this.submit(function() {
-          return disabler.disableForm.apply($this);
+          return Onestep.disabler.disableForm.apply($this);
         });
       }
     });
